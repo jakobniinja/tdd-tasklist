@@ -8,3 +8,5 @@ Z
 *src/test/java/com/jakobniinja/AppTest.java,e\e\ee6f6a8be2da90d5f1d8ae8fe2536182a2367585
 V
 &src/main/java/com/jakobniinja/App.java,b\2\b21a3c083576370be6d30f3fe60c3db8206ea9d6
+Z
+*src/test/java/com/jakobniinja/Apptest.java,2\b\2bf558e6209595dcda983cd57949bc8fd55f8ca1
