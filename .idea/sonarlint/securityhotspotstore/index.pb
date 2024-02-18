@@ -10,3 +10,7 @@ V
 &src/main/java/com/jakobniinja/App.java,b\2\b21a3c083576370be6d30f3fe60c3db8206ea9d6
 Z
 *src/test/java/com/jakobniinja/Apptest.java,2\b\2bf558e6209595dcda983cd57949bc8fd55f8ca1
+a
+1src/test/java/com/jakobniinja/tasks/TaskTest.java,1\f\1f8969f36753b955b6855f959f15f4b6e3255396
+]
+-src/main/java/com/jakobniinja/tasks/Task.java,e\7\e7aabd0b3e20d3946e19d20c13f619c8d7204feb
