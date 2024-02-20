@@ -1,3 +1,5 @@
 
-d
-java:S2094"BRemove this empty class, write its code or make it an "interface".(ùôçëøÿÿÿÿ8©­ˆ‡Ü1
+r
+java:S1104"PMake task a static final constant or non-public and provide accessors if needed.(ãøã„úÿÿÿÿ8’Õş§Ü1
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Àİì8™Õş§Ü1
