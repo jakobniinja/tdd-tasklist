@@ -20,3 +20,5 @@ e
 5src/test/java/com/jakobniinja/tasks/TaskListTest.java,1\2\12341f00bee89fe4a1b4a3288929521b64dc27ee
 9
 	readme.md,2\7\275d783e298228506068436512433d343feb52aa
+@
+tdd-tasklist.iml,7\3\7361cc99e91d0d9975ff948be41df2feade17ff7

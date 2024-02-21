@@ -20,7 +20,16 @@ public class TaskList {
 
   public void addProject(String desc) {
 
-    ArrayList<Task> arrayList = new ArrayList<>(List.of(new Task(0, null, false)));
-    task.put(desc, arrayList);
+    task.put(desc, new ArrayList<>());
+  }
+
+  public void addTask(String project, String description) {
+
+    List<Task> taskList = task.get(project);
+    if (project == null) {
+      return; // Escape due to misuse of method
+    }
+
+    taskList.add(new Task(0, description, false));
   }
 }

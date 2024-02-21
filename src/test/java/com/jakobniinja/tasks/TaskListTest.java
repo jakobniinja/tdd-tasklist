@@ -24,8 +24,23 @@ class TaskListTest {
   }
 
   @Test
-  void onAddTaskNotEmpty() {
+  void onAddProjectNotEmpty() {
     taskList.addProject("New tdd-java project");
-    assertFalse(taskList.getTask().isEmpty());
+
+    assertFalse(taskList.task.keySet().isEmpty());
+  }
+
+
+  @Test
+  void onAddTaskNull() {
+    taskList.addTask(null, "my first testing task");
+    assertTrue(taskList.getTask().isEmpty());
+  }
+
+  @Test
+  void onAddTaskValid() {
+    taskList.addProject("New tdd-java project");
+    taskList.addTask("New tdd-java project", "my first testing task");
+    assertEquals(1, taskList.getTask().size());
   }
 }
