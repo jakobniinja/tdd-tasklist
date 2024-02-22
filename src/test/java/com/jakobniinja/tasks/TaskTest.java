@@ -20,22 +20,28 @@ class TaskTest {
   void onTaskGetId() {
 
     Task task = new Task(0, "Read book for 20 minutes", false);
-    assertEquals(0L, task.id());
+    assertEquals(0L, task.getId());
   }
 
   @Test
   void getDescAfterConstruction() {
-    assertEquals("Read book for 20 minutes", task.description());
+    assertEquals("Read book for 20 minutes", task.getDescription());
   }
 
   @Test
   void onTaskInitNotDone(){
-    assertFalse(task.done());
+    assertFalse(task.isDone());
   }
 
   @Test
   void onTaskDone(){
     task = new Task(0, "Done task", true);
-    assertTrue(task.done());
+    assertTrue(task.isDone());
+  }
+
+  @Test
+  void onTaskSetDone(){
+    task.setDone(true);
+    assertTrue(task.isDone());
   }
 }

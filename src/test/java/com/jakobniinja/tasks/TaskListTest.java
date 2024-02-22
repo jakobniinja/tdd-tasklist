@@ -20,27 +20,45 @@ class TaskListTest {
   void onInitShowEmpty() {
     taskList.show();
 
-    assertTrue(taskList.getTask().isEmpty());
+    assertTrue(taskList.getTasks().isEmpty());
   }
 
   @Test
   void onAddProjectNotEmpty() {
     taskList.addProject("New tdd-java project");
 
-    assertFalse(taskList.task.keySet().isEmpty());
+    assertFalse(taskList.tasks.keySet().isEmpty());
   }
 
 
   @Test
   void onAddTaskNull() {
     taskList.addTask(null, "my first testing task");
-    assertTrue(taskList.getTask().isEmpty());
+    assertTrue(taskList.getTasks().isEmpty());
   }
 
   @Test
   void onAddTaskValid() {
     taskList.addProject("New tdd-java project");
     taskList.addTask("New tdd-java project", "my first testing task");
-    assertEquals(1, taskList.getTask().size());
+    assertEquals(1, taskList.getTasks().size());
+  }
+  
+  @Test
+  void onMatchDoneTrue(){
+    taskList.addProject("New tdd-java project");
+    taskList.addTask("New tdd-java project", "my first testing task");
+    taskList.setDone("0", true);
+
+    assertTrue(taskList.getTasks().stream().anyMatch(Task::isDone));
+  }
+
+  @Test
+  void onMissDoneFalse(){
+    taskList.addProject("New tdd-java project");
+    taskList.addTask("New tdd-java project", "my first testing task");
+    taskList.setDone("1", true);
+
+    assertFalse(taskList.getTasks().stream().anyMatch(Task::isDone));
   }
 }
