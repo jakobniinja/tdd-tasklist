@@ -12,6 +12,7 @@ public class TaskList {
 
   public void show() {
 
+    System.out.print("You have one task");
   }
 
   public List<Task> getTasks() {
@@ -44,5 +45,13 @@ public class TaskList {
         }
       }
     }
+  }
+
+  public void check(String stringId, boolean done) {
+    setDone(stringId, done);
+  }
+
+  public void unCheck(String stringId, boolean done) {
+    setDone(stringId, done);
   }
 }
