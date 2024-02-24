@@ -14,8 +14,6 @@ class TaskListTest {
 
   private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
-  private final PrintStream originalOut = System.out;
-
   TaskList taskList = new TaskList();
 
   @BeforeEach
@@ -32,6 +30,7 @@ class TaskListTest {
   void onInitShowEmpty() {
     taskList.show();
 
+    assertEquals("", outContent.toString());
     assertTrue(taskList.getTasks().isEmpty());
   }
 
@@ -39,10 +38,24 @@ class TaskListTest {
   void onShowHasItem() {
     taskList.addProject("Best Tdd project so far!");
     taskList.addTask("Best Tdd project so far!", "write first unit test.");
+    taskList.setDone("0", true);
 
     taskList.show();
 
-    assertEquals("You have one task", outContent.toString());
+    String expected = "Best Tdd project so far! write first unit test. progress: X";
+    assertEquals(expected, outContent.toString());
+  }
+
+  @Test
+  void onShowHasItemUndone() {
+    taskList.addProject("Best Tdd project so far!");
+    taskList.addTask("Best Tdd project so far!", "write first unit test.");
+    taskList.setDone("0", false);
+
+    taskList.show();
+
+    String expected = "Best Tdd project so far! write first unit test. progress: 0";
+    assertEquals(expected, outContent.toString());
   }
 
   @Test

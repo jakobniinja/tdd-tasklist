@@ -5,14 +5,22 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class TaskList {
 
   public Map<String, List<Task>> tasks = new LinkedHashMap<>();
 
   public void show() {
+    for (Entry<String, List<Task>> project : tasks.entrySet()) {
+      System.out.print(project.getKey() + " ");
+      for (Task task : project.getValue()) {
 
-    System.out.print("You have one task");
+        final String done = task.isDone() ? "X" : "0";
+
+        System.out.print(task.getDescription() + " progress: " + done);
+      }
+    }
   }
 
   public List<Task> getTasks() {
@@ -37,7 +45,7 @@ public class TaskList {
   public void setDone(String stringId, boolean done) {
     int id = Integer.parseInt(stringId);
 
-    for (Map.Entry<String, List<Task>> project : tasks.entrySet()) {
+    for (Entry<String, List<Task>> project : tasks.entrySet()) {
       for (Task task : project.getValue()) {
         if (task.getId() == id) {
           task.setDone(done);
