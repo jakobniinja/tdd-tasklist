@@ -1,5 +1,6 @@
 
 s
-java:S1104"QMake tasks a static final constant or non-public and provide accessors if needed.(£æº…ûÿÿÿÿ8í§¹ÎÝ1
-L	java:S106"+Replace this use of System.out by a logger.( Úåœþÿÿÿÿ8ý§¹ÎÝ1
-L	java:S106"+Replace this use of System.out by a logger.(ß™®—ùÿÿÿÿ8þ§¹ÎÝ1
+java:S1104"QMake tasks a static final constant or non-public and provide accessors if needed.(£æº…ûÿÿÿÿ8´ð¡÷Ý1
+L	java:S106"+Replace this use of System.out by a logger.( Úåœþÿÿÿÿ8Êð¡÷Ý1
+L	java:S106"+Replace this use of System.out by a logger.(ß™®—ùÿÿÿÿ8Ëð¡÷Ý1
+L	java:S106C"+Replace this use of System.out by a logger.(¯¯“Àøÿÿÿÿ8Òð¡÷Ý1

@@ -70,7 +70,7 @@ class TaskListTest {
 
   @Test
   void onAddProjectNotEmpty() {
-    taskList.addProject(BEST_TDD_PROJECT_SO_FAR );
+    taskList.addProject(BEST_TDD_PROJECT_SO_FAR);
 
     assertFalse(taskList.tasks.keySet().isEmpty());
   }
@@ -84,8 +84,8 @@ class TaskListTest {
 
   @Test
   void onAddTaskValid() {
-    taskList.addProject(BEST_TDD_PROJECT_SO_FAR );
-    taskList.addTask(BEST_TDD_PROJECT_SO_FAR , WRITE_FIRST_UNIT_TEST);
+    taskList.addProject(BEST_TDD_PROJECT_SO_FAR);
+    taskList.addTask(BEST_TDD_PROJECT_SO_FAR, WRITE_FIRST_UNIT_TEST);
     assertEquals(1, taskList.getTasks().size());
   }
 
@@ -132,5 +132,28 @@ class TaskListTest {
     taskList.unCheck(STRING_ID1, false);
 
     assertTrue(taskList.getTasks().stream().noneMatch(Task::isDone));
+  }
+
+  @Test
+  void onUnknownCommandError() {
+    String command = "foo";
+    taskList.error(command);
+
+    assertEquals("Can't recognize the command: " + command, outContent.toString());
+  }
+
+  @Test
+  void onProjectSubCommand() {
+
+    taskList.add("project");
+    assertEquals(1, taskList.tasks.size());
+  }
+
+  @Test
+  void onTaskSubCommand() {
+
+    taskList.addProject("project");
+    taskList.add("task");
+    assertEquals(1, taskList.tasks.size());
   }
 }

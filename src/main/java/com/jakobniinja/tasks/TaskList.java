@@ -62,4 +62,17 @@ public class TaskList {
   public void unCheck(String stringId, boolean done) {
     setDone(stringId, done);
   }
+
+  public void error(String command) {
+    System.out.print("Can't recognize the command: " + command);
+  }
+
+  public void add(String command) {
+
+    if (command.equals("project")) {
+      addProject(command);
+    } else if (command.equals("task")) {
+      addTask("project", command);
+    }
+  }
 }
