@@ -9,6 +9,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 class TaskListTest {
 
@@ -145,15 +147,30 @@ class TaskListTest {
   @Test
   void onProjectSubCommand() {
 
-    taskList.add("project");
+    taskList.add("project my-task");
     assertEquals(1, taskList.tasks.size());
+  }
+
+  @Test
+  void onAddNotProject() {
+    taskList.add("zero my-task");
+    assertEquals(0, taskList.tasks.size());
   }
 
   @Test
   void onTaskSubCommand() {
 
-    taskList.addProject("project");
-    taskList.add("task");
+    taskList.addProject("tdd");
+    taskList.add("task tdd workshop");
     assertEquals(1, taskList.tasks.size());
+  }
+
+  @ParameterizedTest
+  @ValueSource(strings = {"Commands:", "  show", "  add project <project name>",
+      "  add task <project name> <task description>", "  check <task id>",
+      "  uncheck <task id>", "\n"})
+  void onHelpParams(String argument) {
+    taskList.help();
+    assertTrue(outContent.toString().contains(argument));
   }
 }

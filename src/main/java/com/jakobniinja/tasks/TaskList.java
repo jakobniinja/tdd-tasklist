@@ -68,11 +68,24 @@ public class TaskList {
   }
 
   public void add(String command) {
+    String[] subCommandRest = command.split(" ", 2);
+    String subCommand = subCommandRest[0];
 
-    if (command.equals("project")) {
-      addProject(command);
-    } else if (command.equals("task")) {
-      addTask("project", command);
+    if (subCommand.equals("project")) {
+      addProject(subCommandRest[1]);
+    } else if (subCommand.equals("task")) {
+      String[] projectTask = subCommandRest[1].split(" ", 2);
+      addTask(projectTask[0], projectTask[1]);
     }
+  }
+
+  public void help() {
+    System.out.print("Commands:");
+    System.out.print("  show");
+    System.out.print("  add project <project name>");
+    System.out.print("  add task <project name> <task description>");
+    System.out.print("  check <task id>");
+    System.out.print("  uncheck <task id>");
+    System.out.println();
   }
 }
