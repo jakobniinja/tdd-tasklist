@@ -173,4 +173,53 @@ class TaskListTest {
     taskList.help();
     assertTrue(outContent.toString().contains(argument));
   }
+
+  @Test
+  void onLastIdInit() {
+    assertEquals(0, taskList.getLastId());
+  }
+
+  @Test
+  void onNextId() {
+    taskList.nextId();
+    assertEquals(1, taskList.getLastId());
+  }
+
+  @Test
+  void onExecuteShow() {
+    taskList.execute("show");
+    assertEquals("", outContent.toString());
+  }
+
+  @Test
+  void onExecuteShowNotEmpty() {
+
+    taskList.addProject(BEST_TDD_PROJECT_SO_FAR);
+    taskList.addTask(BEST_TDD_PROJECT_SO_FAR, WRITE_FIRST_UNIT_TEST);
+    taskList.setDone(STRING_ID, false);
+
+    taskList.show();
+    taskList.execute("show");
+    assertFalse(outContent.toString().isEmpty());
+  }
+
+
+  @Test
+  void onExecuteAddProject() {
+    taskList.execute("add project best-tdd-course");
+    assertFalse(taskList.tasks.isEmpty());
+  }
+
+  @Test
+  void onExecuteAddTask() {
+    taskList.addProject("tdd");
+    taskList.execute("add task tdd java-tdd-tennis");
+    assertFalse(taskList.tasks.isEmpty());
+  }
+
+  @Test
+  void onExecuteError(){
+    taskList.execute("unsupported command!");
+    assertTrue(outContent.toString().contains("Can't recognize the command:"));
+  }
 }

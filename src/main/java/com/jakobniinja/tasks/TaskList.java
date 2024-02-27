@@ -9,7 +9,13 @@ import java.util.Map.Entry;
 
 public class TaskList {
 
+  private static final String TASK = "task";
+
+  private static final String PROJECT = "project";
+
   public Map<String, List<Task>> tasks = new LinkedHashMap<>();
+
+  private long lastId =0;
 
   public void show() {
     for (Entry<String, List<Task>> project : tasks.entrySet()) {
@@ -71,9 +77,9 @@ public class TaskList {
     String[] subCommandRest = command.split(" ", 2);
     String subCommand = subCommandRest[0];
 
-    if (subCommand.equals("project")) {
+    if (subCommand.equals(PROJECT)) {
       addProject(subCommandRest[1]);
-    } else if (subCommand.equals("task")) {
+    } else if (subCommand.equals(TASK)) {
       String[] projectTask = subCommandRest[1].split(" ", 2);
       addTask(projectTask[0], projectTask[1]);
     }
@@ -87,5 +93,30 @@ public class TaskList {
     System.out.print("  check <task id>");
     System.out.print("  uncheck <task id>");
     System.out.println();
+  }
+
+  public void nextId() {
+    lastId++;
+  }
+
+  public long getLastId() {
+    return lastId;
+  }
+
+
+  public void execute(String commandLine) {
+    String[] commandRest = commandLine.split(" ", 2);
+    String command = commandRest[0];
+    switch (command) {
+      case "show" -> {
+        show();
+      }
+      case "add" -> {
+        add(commandRest[1]);
+      }
+      default -> {
+        error(command);
+      }
+    }
   }
 }

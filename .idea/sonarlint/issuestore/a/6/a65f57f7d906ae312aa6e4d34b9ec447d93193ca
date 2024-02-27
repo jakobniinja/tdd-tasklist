@@ -1,13 +1,19 @@
 
 s
-java:S1104"QMake tasks a static final constant or non-public and provide accessors if needed.(£æº…ûÿÿÿÿ8ßüŞ1
-L	java:S106"+Replace this use of System.out by a logger.( Úåœşÿÿÿÿ8öüŞ1
-L	java:S106"+Replace this use of System.out by a logger.(ß™®—ùÿÿÿÿ8öüŞ1
-L	java:S106C"+Replace this use of System.out by a logger.(¯¯“Àøÿÿÿÿ8ıüŞ1
-L	java:S106S"+Replace this use of System.out by a logger.(ÈøÀ×ûÿÿÿÿ8•Ù¥Ş1
-L	java:S106T"+Replace this use of System.out by a logger.(À…§Õüÿÿÿÿ8Û­©Ş1
-G	java:S106U"+Replace this use of System.out by a logger.(îëİƒ8ì®Ş1
-G	java:S106V"+Replace this use of System.out by a logger.(”¹Ğ8÷é²Ş1
-G	java:S106W"+Replace this use of System.out by a logger.(¾®´¿8å¶Ş1
-L	java:S106X"+Replace this use of System.out by a logger.(ªÜÛêúÿÿÿÿ8Áâ¸Ş1
-L	java:S106Y"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8é»Ş1
+java:S1104"QMake tasks a static final constant or non-public and provide accessors if needed.(£æº…ûÿÿÿÿ8€ÌÙÇŞ1
+L	java:S106"+Replace this use of System.out by a logger.( Úåœşÿÿÿÿ8“ÌÙÇŞ1
+L	java:S106"+Replace this use of System.out by a logger.(ß™®—ùÿÿÿÿ8“ÌÙÇŞ1
+L	java:S106I"+Replace this use of System.out by a logger.(¯¯“Àøÿÿÿÿ8™ÌÙÇŞ1
+L	java:S106Y"+Replace this use of System.out by a logger.(ÈøÀ×ûÿÿÿÿ8›ÌÙÇŞ1
+L	java:S106Z"+Replace this use of System.out by a logger.(À…§Õüÿÿÿÿ8›ÌÙÇŞ1
+G	java:S106["+Replace this use of System.out by a logger.(îëİƒ8œÌÙÇŞ1
+G	java:S106\"+Replace this use of System.out by a logger.(”¹Ğ8œÌÙÇŞ1
+G	java:S106]"+Replace this use of System.out by a logger.(¾®´¿8œÌÙÇŞ1
+L	java:S106^"+Replace this use of System.out by a logger.(ªÜÛêúÿÿÿÿ8œÌÙÇŞ1
+L	java:S106_"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8œÌÙÇŞ1
+>
+java:S6205o"Remove this redundant block.(‰ó¢üÿÿÿÿ8âòÈŞ1
+>
+java:S6205r"Remove this redundant block.(™–Ø¥şÿÿÿÿ8ãòÈŞ1
+9
+java:S6205u"Remove this redundant block.(üØô8ãòÈŞ1
