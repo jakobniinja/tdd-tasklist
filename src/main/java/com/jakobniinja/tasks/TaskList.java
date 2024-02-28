@@ -15,7 +15,7 @@ public class TaskList {
 
   public Map<String, List<Task>> tasks = new LinkedHashMap<>();
 
-  private long lastId =0;
+  private long lastId = 0;
 
   public void show() {
     for (Entry<String, List<Task>> project : tasks.entrySet()) {
@@ -61,12 +61,12 @@ public class TaskList {
     }
   }
 
-  public void check(String stringId, boolean done) {
-    setDone(stringId, done);
+  public void check(String stringId) {
+    setDone(stringId, true);
   }
 
-  public void unCheck(String stringId, boolean done) {
-    setDone(stringId, done);
+  public void unCheck(String stringId) {
+    setDone(stringId, false);
   }
 
   public void error(String command) {
@@ -108,15 +108,16 @@ public class TaskList {
     String[] commandRest = commandLine.split(" ", 2);
     String command = commandRest[0];
     switch (command) {
-      case "show" -> {
-        show();
-      }
-      case "add" -> {
-        add(commandRest[1]);
-      }
-      default -> {
-        error(command);
-      }
+      case "show" -> show();
+      case "add" -> add(commandRest[1]);
+      case "check" -> check(commandRest[1]);
+      case "uncheck" -> unCheck(commandRest[1]);
+      case "help" -> help();
+      default -> error(command);
     }
+  }
+
+  public void run() {
+    throw new RuntimeException();
   }
 }

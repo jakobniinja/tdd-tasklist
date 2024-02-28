@@ -3,6 +3,7 @@ package com.jakobniinja.tasks;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayOutputStream;
@@ -113,7 +114,7 @@ class TaskListTest {
   void onCheckReturnTrue() {
     taskList.addProject(BEST_TDD_PROJECT_SO_FAR);
     taskList.addTask(BEST_TDD_PROJECT_SO_FAR, WRITE_FIRST_UNIT_TEST);
-    taskList.check(STRING_ID1, true);
+    taskList.check(STRING_ID1);
 
     assertFalse(taskList.getTasks().stream().anyMatch(Task::isDone));
   }
@@ -131,7 +132,7 @@ class TaskListTest {
   void onUncheckFalse() {
     taskList.addProject(BEST_TDD_PROJECT_SO_FAR);
     taskList.addTask(BEST_TDD_PROJECT_SO_FAR, WRITE_FIRST_UNIT_TEST);
-    taskList.unCheck(STRING_ID1, false);
+    taskList.unCheck(STRING_ID1);
 
     assertTrue(taskList.getTasks().stream().noneMatch(Task::isDone));
   }
@@ -218,8 +219,40 @@ class TaskListTest {
   }
 
   @Test
-  void onExecuteError(){
+  void onExecuteCheck() {
+
+    taskList.addProject(BEST_TDD_PROJECT_SO_FAR);
+    taskList.addTask(BEST_TDD_PROJECT_SO_FAR, WRITE_FIRST_UNIT_TEST);
+
+    taskList.execute("check 0");
+    assertTrue(taskList.getTasks().stream().anyMatch(Task::isDone));
+  }
+
+  @Test
+  void onExecuteUnCheck() {
+
+    taskList.addProject(BEST_TDD_PROJECT_SO_FAR);
+    taskList.addTask(BEST_TDD_PROJECT_SO_FAR, WRITE_FIRST_UNIT_TEST);
+
+    taskList.execute("uncheck 0");
+    assertFalse(taskList.getTasks().stream().anyMatch(Task::isDone));
+  }
+
+  @Test
+  void onExecuteHelp() {
+
+    taskList.execute("help");
+    assertTrue(outContent.toString().contains("Commands:"));
+  }
+
+  @Test
+  void onExecuteError() {
     taskList.execute("unsupported command!");
     assertTrue(outContent.toString().contains("Can't recognize the command:"));
+  }
+  
+  @Test
+  void onRunThrow(){
+    assertThrows(RuntimeException.class, () -> taskList.run());
   }
 }
