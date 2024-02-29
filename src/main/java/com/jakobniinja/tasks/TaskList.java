@@ -1,5 +1,8 @@
 package com.jakobniinja.tasks;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
@@ -15,7 +18,15 @@ public class TaskList {
 
   public Map<String, List<Task>> tasks = new LinkedHashMap<>();
 
+  BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
+  PrintWriter out = new PrintWriter(System.out);
+
   private long lastId = 0;
+
+  public static void main(String[] args) {
+
+  }
 
   public void show() {
     for (Entry<String, List<Task>> project : tasks.entrySet()) {
@@ -117,7 +128,4 @@ public class TaskList {
     }
   }
 
-  public void run() {
-    throw new RuntimeException();
-  }
 }

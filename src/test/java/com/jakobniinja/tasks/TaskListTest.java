@@ -250,9 +250,11 @@ class TaskListTest {
     taskList.execute("unsupported command!");
     assertTrue(outContent.toString().contains("Can't recognize the command:"));
   }
-  
   @Test
-  void onRunThrow(){
-    assertThrows(RuntimeException.class, () -> taskList.run());
+  void onInitMain() {
+
+    TaskList.main(new String[]{});
+    assertNotNull(taskList.in);
+    assertNotNull(taskList.out);
   }
 }
