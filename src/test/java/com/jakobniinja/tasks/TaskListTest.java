@@ -3,11 +3,12 @@ package com.jakobniinja.tasks;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.io.StringReader;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -256,5 +257,20 @@ class TaskListTest {
     TaskList.main(new String[]{});
     assertNotNull(taskList.in);
     assertNotNull(taskList.out);
+  }
+  @Test
+  void onRunShow(){
+    taskList.in = new BufferedReader(new StringReader("show"));
+    taskList.run();
+
+    assertTrue(outContent.toString().contains("Commands:"));
+  }
+
+  @Test
+  void onRunQuit(){
+    taskList.in = new BufferedReader(new StringReader("quit"));
+    taskList.run();
+
+    assertTrue(outContent.toString().contains("exit"));
   }
 }

@@ -1,16 +1,18 @@
 
+h	java:S112‹"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8“é«›ß1
 s
-java:S1104"QMake tasks a static final constant or non-public and provide accessors if needed.(£æº…ûÿÿÿÿ8ÇÁšß1
+java:S1104"QMake tasks a static final constant or non-public and provide accessors if needed.(£æº…ûÿÿÿÿ8ÇÁšß1
 
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Çµí‘8‰íâšß1
-L	java:S106"+Replace this use of System.out by a logger.(½åç÷üÿÿÿÿ8³ÇÁšß1
-L	java:S106!"+Replace this use of System.out by a logger.( Úåœşÿÿÿÿ8µÇÁšß1
-L	java:S106&"+Replace this use of System.out by a logger.(ß™®—ùÿÿÿÿ8µÇÁšß1
-L	java:S106T"+Replace this use of System.out by a logger.(¯¯“Àøÿÿÿÿ8ºÇÁšß1
-L	java:S106d"+Replace this use of System.out by a logger.(ÈøÀ×ûÿÿÿÿ8»ÇÁšß1
-L	java:S106e"+Replace this use of System.out by a logger.(À…§Õüÿÿÿÿ8»ÇÁšß1
-G	java:S106f"+Replace this use of System.out by a logger.(îëİƒ8¼ÇÁšß1
-G	java:S106g"+Replace this use of System.out by a logger.(”¹Ğ8¼ÇÁšß1
-G	java:S106h"+Replace this use of System.out by a logger.(¾®´¿8¼ÇÁšß1
-L	java:S106i"+Replace this use of System.out by a logger.(ªÜÛêúÿÿÿÿ8¼ÇÁšß1
-L	java:S106j"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8¼ÇÁšß1
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Çµí‘8‰íâšß1
+L	java:S106"+Replace this use of System.out by a logger.(½åç÷üÿÿÿÿ8³ÇÁšß1
+L	java:S106""+Replace this use of System.out by a logger.( Úåœşÿÿÿÿ8µÇÁšß1
+L	java:S106'"+Replace this use of System.out by a logger.(ß™®—ùÿÿÿÿ8µÇÁšß1
+L	java:S106U"+Replace this use of System.out by a logger.(¯¯“Àøÿÿÿÿ8ºÇÁšß1
+L	java:S106e"+Replace this use of System.out by a logger.(ÈøÀ×ûÿÿÿÿ8»ÇÁšß1
+L	java:S106f"+Replace this use of System.out by a logger.(À…§Õüÿÿÿÿ8»ÇÁšß1
+G	java:S106g"+Replace this use of System.out by a logger.(îëİƒ8¼ÇÁšß1
+G	java:S106h"+Replace this use of System.out by a logger.(”¹Ğ8¼ÇÁšß1
+G	java:S106i"+Replace this use of System.out by a logger.(¾®´¿8¼ÇÁšß1
+L	java:S106j"+Replace this use of System.out by a logger.(ªÜÛêúÿÿÿÿ8¼ÇÁšß1
+L	java:S106k"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8¼ÇÁšß1
+H	java:S106‡"+Replace this use of System.out by a logger.(¶‚ıî8¯é«›ß1
