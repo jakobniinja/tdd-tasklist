@@ -131,13 +131,9 @@ public class TaskList {
 
   public void run() {
     try {
-      if ("quit".equalsIgnoreCase(in.readLine())) {
-        System.out.println("exiting...");
-        return;
-      }
+      execute(in.readLine());
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
-    execute("help");
   }
 }

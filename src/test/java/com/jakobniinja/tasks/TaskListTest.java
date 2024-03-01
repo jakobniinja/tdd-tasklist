@@ -3,13 +3,18 @@ package com.jakobniinja.tasks;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.io.StringReader;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -251,6 +256,7 @@ class TaskListTest {
     taskList.execute("unsupported command!");
     assertTrue(outContent.toString().contains("Can't recognize the command:"));
   }
+
   @Test
   void onInitMain() {
 
@@ -258,19 +264,22 @@ class TaskListTest {
     assertNotNull(taskList.in);
     assertNotNull(taskList.out);
   }
+
   @Test
-  void onRunShow(){
-    taskList.in = new BufferedReader(new StringReader("show"));
+  void onRunHelp() {
+    taskList.in = new BufferedReader(new StringReader("help"));
     taskList.run();
 
     assertTrue(outContent.toString().contains("Commands:"));
   }
 
   @Test
-  void onRunQuit(){
-    taskList.in = new BufferedReader(new StringReader("quit"));
-    taskList.run();
+  @Disabled(value = "Test extends the build with 1.5s, hence disabled.")
+  void onRunThrows() throws IOException {
+    BufferedReader bufferedReaderMock = mock(BufferedReader.class);
+    taskList.in = bufferedReaderMock;
 
-    assertTrue(outContent.toString().contains("exit"));
+    when(bufferedReaderMock.readLine()).thenThrow(IOException.class);
+    assertThrows(RuntimeException.class, () -> taskList.run());
   }
 }
